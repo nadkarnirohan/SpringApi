@@ -1,4 +1,3 @@
-
 package com.restapi.pojo;
 
 import java.util.Date;
