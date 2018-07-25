@@ -2,6 +2,10 @@ package com.restapi.pojo;
 
 import java.util.Date;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 import org.springframework.format.annotation.DateTimeFormat;
 
 public class ORDERS {
@@ -25,7 +29,15 @@ public class ORDERS {
 		DELIVERYDATE = dELIVERYDATE;
 		ORDERTOTAL = oRDERTOTAL;
 	}
-
+	public ORDERS( int cUSTID, Date oREDERDATE, Date dELIVERYDATE, int oRDERTOTAL) {
+		super();
+		CUSTID = cUSTID;
+		OREDERDATE = oREDERDATE;
+		DELIVERYDATE = dELIVERYDATE;
+		ORDERTOTAL = oRDERTOTAL;
+	}
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	public int getORDERNUM() {
 		return ORDERNUM;
 	}

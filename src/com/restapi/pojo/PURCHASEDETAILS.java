@@ -25,6 +25,16 @@ public class PURCHASEDETAILS {
 		DETAILNO = dETAILNO;
 	}
 
+	public PURCHASEDETAILS(int pRODUCTNO, int qUANTITY, int pRODUCTPRICE, int dETAILNO) {
+		super();
+		PRODUCTNO = pRODUCTNO;
+		QUANTITY = qUANTITY;
+		PRODUCTPRICE = pRODUCTPRICE;
+		DETAILNO = dETAILNO;
+	}
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	public int getPURCHASENO() {
 		return PURCHASENO;
 	}

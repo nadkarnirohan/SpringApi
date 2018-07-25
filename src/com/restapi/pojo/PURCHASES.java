@@ -29,6 +29,15 @@ public class PURCHASES {
 		PURCHASEPRICE = pURCHASEPRICE;
 	}
 
+	public PURCHASES(int sELLERID, Date pURCHASEDATE, int pURCHASEPRICE) {
+		super();
+		SELLERID = sELLERID;
+		PURCHASEDATE = pURCHASEDATE;
+		PURCHASEPRICE = pURCHASEPRICE;
+	}
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	public int getPURCHASENO() {
 		return PURCHASENO;
 	}

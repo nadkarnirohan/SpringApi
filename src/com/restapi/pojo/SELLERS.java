@@ -15,15 +15,15 @@ import javax.persistence.*;
         private String EMAIL ;
         private String PASSWORD ;
         private long PHONE ;
-        private List<SELLERSADDRESS> ADDRESS ;
-        private List<PURCHASES> PURCHASES ;
+//        private List<SELLERSADDRESS> ADDRESS ;
+//        private List<PURCHASES> PURCHASES ;
         
         public SELLERS() {
 			// TODO Auto-generated constructor stub
 		}
 
 		public SELLERS(int sELLERID, String sELLERNAME, String fIRSTNAME, String lASTNAME, String eMAIL,
-				String pASSWORD, long pHONE, List<SELLERSADDRESS> aDDRESS, List<com.restapi.pojo.PURCHASES> pURCHASES) {
+				String pASSWORD, long pHONE) {
 			super();
 			SELLERID = sELLERID;
 			SELLERNAME = sELLERNAME;
@@ -32,10 +32,30 @@ import javax.persistence.*;
 			EMAIL = eMAIL;
 			PASSWORD = pASSWORD;
 			PHONE = pHONE;
-			ADDRESS = aDDRESS;
-			PURCHASES = pURCHASES;
+//			ADDRESS = aDDRESS;
+//			PURCHASES = pURCHASES;
+		}
+		
+		public SELLERS( String sELLERNAME, String fIRSTNAME, String lASTNAME, String eMAIL,
+				String pASSWORD, long pHONE) {
+			super();
+			SELLERNAME = sELLERNAME;
+			FIRSTNAME = fIRSTNAME;
+			LASTNAME = lASTNAME;
+			EMAIL = eMAIL;
+			PASSWORD = pASSWORD;
+			PHONE = pHONE;
+//			ADDRESS = aDDRESS;
+//			PURCHASES = pURCHASES;
+		}
+		public SELLERS(String email2, String sELLERNAME, int sellerid2) {
+			SELLERID = sellerid2;
+			SELLERNAME = sELLERNAME;
+			EMAIL = email2;
 		}
 
+		@Id
+		@GeneratedValue(strategy = GenerationType.SEQUENCE)
 		public int getSELLERID() {
 			return SELLERID;
 		}
@@ -92,21 +112,21 @@ import javax.persistence.*;
 			PHONE = pHONE;
 		}
 
-		public List<SELLERSADDRESS> getADDRESS() {
-			return ADDRESS;
-		}
+//		public List<SELLERSADDRESS> getADDRESS() {
+//			return ADDRESS;
+//		}
+//
+//		public void setADDRESS(List<SELLERSADDRESS> aDDRESS) {
+//			ADDRESS = aDDRESS;
+//		}
 
-		public void setADDRESS(List<SELLERSADDRESS> aDDRESS) {
-			ADDRESS = aDDRESS;
-		}
-
-		public List<PURCHASES> getPURCHASES() {
-			return PURCHASES;
-		}
-
-		public void setPURCHASES(List<PURCHASES> pURCHASES) {
-			PURCHASES = pURCHASES;
-		}
+//		public List<PURCHASES> getPURCHASES() {
+//			return PURCHASES;
+//		}
+//
+//		public void setPURCHASES(List<PURCHASES> pURCHASES) {
+//			PURCHASES = pURCHASES;
+//		}
         
 		
     }

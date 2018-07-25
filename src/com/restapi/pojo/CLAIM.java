@@ -14,11 +14,15 @@ public class CLAIM
 		
 	}
 
-	public CLAIM(String eMAIL, String pASSWORD, int cUSTID) {
+	public CLAIM(String eMAIL, int cUSTID) {
+		
+		EMAIL = eMAIL;
+		CUSTID = cUSTID;
+	}
+public CLAIM(String eMAIL, String pASSWORD) {
 		
 		EMAIL = eMAIL;
 		PASSWORD = pASSWORD;
-		CUSTID = cUSTID;
 	}
 	@Column
 	public String getEMAIL() {
@@ -36,7 +40,8 @@ public class CLAIM
 	public void setPASSWORD(String pASSWORD) {
 		PASSWORD = pASSWORD;
 	}
-	@Column
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	public int getCUSTID() {
 		return CUSTID;
 	}

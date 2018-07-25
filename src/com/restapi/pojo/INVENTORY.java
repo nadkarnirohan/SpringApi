@@ -3,7 +3,7 @@ package com.restapi.pojo;
 
 import javax.persistence.*;
 @Entity
-@Table(name = "CUSTOMERADDRESS")	
+@Table(name = "INVENTORY")	
 	 public class INVENTORY
     {
         private int PRODUCTNO ;
@@ -21,6 +21,8 @@ import javax.persistence.*;
 			PRODUCTNAME = pRODUCTNAME;
 		}
 
+		@Id
+		@GeneratedValue(strategy = GenerationType.SEQUENCE)
 		public int getPRODUCTNO() {
 			return PRODUCTNO;
 		}

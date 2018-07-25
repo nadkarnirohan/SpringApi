@@ -1,50 +1,59 @@
 package com.restapi.pojo;
 
 import javax.persistence.*;
+
+import org.hibernate.annotations.Immutable;
+
 @Entity
-@Table(name = "SELLERS_VIEW")	
-	 public class SELLERS_VIEW
-    {
-        private String SELLERNAME ;
-        private String EMAIL ;
-        private String PASSWORD ;
-        
-        public SELLERS_VIEW() {
-			// TODO Auto-generated constructor stub
-		}
+@Table(name = "SELLERS_VIEW")
+@Immutable
+public class SELLERS_VIEW {
+	private String SELLERNAME;
+	private String EMAIL;
+	private String PASSWORD;
 
-		public SELLERS_VIEW(String sELLERNAME, String eMAIL, String pASSWORD) {
-			super();
-			SELLERNAME = sELLERNAME;
-			EMAIL = eMAIL;
-			PASSWORD = pASSWORD;
-		}
+	public SELLERS_VIEW() {
+		// TODO Auto-generated constructor stub
+	}
 
-		public String getSELLERNAME() {
-			return SELLERNAME;
-		}
+	public SELLERS_VIEW(String sELLERNAME, String eMAIL, String pASSWORD) {
+		super();
+		SELLERNAME = sELLERNAME;
+		EMAIL = eMAIL;
+		PASSWORD = pASSWORD;
+	}
 
-		public void setSELLERNAME(String sELLERNAME) {
-			SELLERNAME = sELLERNAME;
-		}
+	public SELLERS_VIEW(String eMAIL, String pASSWORD) {
+		EMAIL = eMAIL;
+		PASSWORD = pASSWORD;
+	}
 
-		public String getEMAIL() {
-			return EMAIL;
-		}
+	@Id
+	@Column
+	public String getSELLERNAME() {
+		return SELLERNAME;
+	}
 
-		public void setEMAIL(String eMAIL) {
-			EMAIL = eMAIL;
-		}
+	public void setSELLERNAME(String sELLERNAME) {
+		SELLERNAME = sELLERNAME;
+	}
 
-		public String getPASSWORD() {
-			return PASSWORD;
-		}
+	@Column
+	public String getEMAIL() {
+		return EMAIL;
+	}
 
-		public void setPASSWORD(String pASSWORD) {
-			PASSWORD = pASSWORD;
-		}
-        
-		
-    }
-	
-	 
+	public void setEMAIL(String eMAIL) {
+		EMAIL = eMAIL;
+	}
+
+	@Column
+	public String getPASSWORD() {
+		return PASSWORD;
+	}
+
+	public void setPASSWORD(String pASSWORD) {
+		PASSWORD = pASSWORD;
+	}
+
+}

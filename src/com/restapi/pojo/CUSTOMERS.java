@@ -21,15 +21,14 @@ public class CUSTOMERS {
 	private String FIRSTNAME;
 	private String LASTNAME;
 	private long PHONE;
-	private List<CUSTOMERADDRESS> ADDRESS;
-	private List<ORDERS> ORDERS;
+	/*private List<CUSTOMERADDRESS> ADDRESS;
+	private List<ORDERS> ORDERS;*/
 	
 	public CUSTOMERS() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public CUSTOMERS(int cUSTID, String eMAIL, String pASSWORD, String fIRSTNAME, String lASTNAME, long pHONE,
-			List<CUSTOMERADDRESS> aDDRESS, List<com.restapi.pojo.ORDERS> oRDERS) {
+	public CUSTOMERS(int cUSTID, String eMAIL, String pASSWORD, String fIRSTNAME, String lASTNAME, long pHONE) {
 		super();
 		CUSTID = cUSTID;
 		EMAIL = eMAIL;
@@ -37,10 +36,20 @@ public class CUSTOMERS {
 		FIRSTNAME = fIRSTNAME;
 		LASTNAME = lASTNAME;
 		PHONE = pHONE;
-		ADDRESS = aDDRESS;
-		ORDERS = oRDERS;
 	}
-
+	
+	
+	public CUSTOMERS( String eMAIL, String pASSWORD, String fIRSTNAME, String lASTNAME, long pHONE) {
+		super();
+		
+		EMAIL = eMAIL;
+		PASSWORD = pASSWORD;
+		FIRSTNAME = fIRSTNAME;
+		LASTNAME = lASTNAME;
+		PHONE = pHONE;
+	}
+@Id
+@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	public int getCUSTID() {
 		return CUSTID;
 	}
@@ -87,23 +96,6 @@ public class CUSTOMERS {
 
 	public void setPHONE(long pHONE) {
 		PHONE = pHONE;
-	}
-
-	public List<CUSTOMERADDRESS> getADDRESS() {
-		return ADDRESS;
-	}
-
-	public void setADDRESS(List<CUSTOMERADDRESS> aDDRESS) {
-		ADDRESS = aDDRESS;
-	}
-
-	public List<ORDERS> getORDERS() {
-		return ORDERS;
-	}
-
-	public void setORDERS(List<ORDERS> oRDERS) {
-		ORDERS = oRDERS;
-	}
-	
+	}	
 	
 }

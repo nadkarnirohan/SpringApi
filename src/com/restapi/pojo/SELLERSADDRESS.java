@@ -29,7 +29,8 @@ public class SELLERSADDRESS
 		STATE = sTATE;
 		PINCODE = pINCODE;
 	}
-
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	public int getADDRESSID() {
 		return ADDRESSID;
 	}

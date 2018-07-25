@@ -16,6 +16,12 @@ import javax.persistence.*;
 			PRODUCTNO = pRODUCTNO;
 			PRODUCTNAME = pRODUCTNAME;
 		}
+		public PRODUCTS(String pRODUCTNAME) {
+			super();
+			PRODUCTNAME = pRODUCTNAME;
+		}
+		@Id
+		@GeneratedValue(strategy = GenerationType.SEQUENCE)
 		public int getPRODUCTNO() {
 			return PRODUCTNO;
 		}

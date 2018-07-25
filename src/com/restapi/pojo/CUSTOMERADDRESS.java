@@ -17,7 +17,7 @@ public class CUSTOMERADDRESS {
 	private String DISTRICT;
 	private String STATE;
 	private int PINCODE;
-	
+
 	public CUSTOMERADDRESS() {
 		// TODO Auto-generated constructor stub
 	}
@@ -32,6 +32,17 @@ public class CUSTOMERADDRESS {
 		STATE = sTATE;
 		PINCODE = pINCODE;
 	}
+
+	public CUSTOMERADDRESS(int cUSTID, String sTREET, String cITY, String dISTRICT, String sTATE, int pINCODE) {
+
+		CUSTID = cUSTID;
+		STREET = sTREET;
+		CITY = cITY;
+		DISTRICT = dISTRICT;
+		STATE = sTATE;
+		PINCODE = pINCODE;
+	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	public int getADDRESSID() {
@@ -41,7 +52,8 @@ public class CUSTOMERADDRESS {
 	public void setADDRESSID(int aDDRESSID) {
 		ADDRESSID = aDDRESSID;
 	}
-@Column
+
+	@Column
 	public int getCUSTID() {
 		return CUSTID;
 	}
@@ -49,6 +61,7 @@ public class CUSTOMERADDRESS {
 	public void setCUSTID(int cUSTID) {
 		CUSTID = cUSTID;
 	}
+
 	@Column
 	public String getSTREET() {
 		return STREET;
@@ -57,6 +70,7 @@ public class CUSTOMERADDRESS {
 	public void setSTREET(String sTREET) {
 		STREET = sTREET;
 	}
+
 	@Column
 	public String getCITY() {
 		return CITY;
@@ -65,6 +79,7 @@ public class CUSTOMERADDRESS {
 	public void setCITY(String cITY) {
 		CITY = cITY;
 	}
+
 	@Column
 	public String getDISTRICT() {
 		return DISTRICT;
@@ -73,6 +88,7 @@ public class CUSTOMERADDRESS {
 	public void setDISTRICT(String dISTRICT) {
 		DISTRICT = dISTRICT;
 	}
+
 	@Column
 	public String getSTATE() {
 		return STATE;
@@ -81,6 +97,7 @@ public class CUSTOMERADDRESS {
 	public void setSTATE(String sTATE) {
 		STATE = sTATE;
 	}
+
 	@Column
 	public int getPINCODE() {
 		return PINCODE;
@@ -89,5 +106,5 @@ public class CUSTOMERADDRESS {
 	public void setPINCODE(int pINCODE) {
 		PINCODE = pINCODE;
 	}
-	
+
 }
