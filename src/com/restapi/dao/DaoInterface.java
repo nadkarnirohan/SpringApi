@@ -2,11 +2,10 @@ package com.restapi.dao;
 
 import java.util.List;
 
-import com.restapi.pojo.ADMIN;
-
 public interface DaoInterface<T> {
 
 	T get(int id);
+	public List<T> getSome(int id);
 	List<T> getall();
 	boolean insert(T t);
 	boolean delete(int i);

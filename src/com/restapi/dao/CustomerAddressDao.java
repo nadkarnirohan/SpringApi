@@ -23,7 +23,7 @@ public class CustomerAddressDao implements DaoInterface<CUSTOMERADDRESS> {
 					.setParameter("id", id).getSingleResult();
 		}
 		
-		public List<CUSTOMERADDRESS> getCustomerAddress(int id) {
+		public List<CUSTOMERADDRESS> getSome(int id) {
 			System.out.println("custdao : get summary " + id);
 			return sf.getCurrentSession().createQuery("select addr from CUSTOMERADDRESS addr where addr.CUSTID = :id", CUSTOMERADDRESS.class)
 					.setParameter("id", id).getResultList();

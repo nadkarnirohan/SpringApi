@@ -30,12 +30,10 @@ public class SellerDao implements DaoInterface<SELLERS> {
 
 	@Override
 	public boolean insert(SELLERS seller) {
-		Integer stat = (Integer)sf.getCurrentSession().save(seller);
+		System.out.println(seller.getSELLERID());
+		sf.getCurrentSession().persist(seller);
 		//sf.getCurrentSession().get(seller);
-	if(stat > 0) {
 		return true;
-	}
-		return false;
 	}
 
 	@Override

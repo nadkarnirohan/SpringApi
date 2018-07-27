@@ -65,11 +65,21 @@ public class SellerController {
 		}
 	}
 
-	@PutMapping("/")
-	public ResponseEntity<?> InsertCustomer(@RequestBody SELLERS seller) {
+	@PostMapping("/")
+	public ResponseEntity<?> insertCustomer(@RequestBody SELLERS seller) {
 		Boolean status = false;
 		try {
 			status = dao.insert(seller);
+			return new ResponseEntity<Boolean>(status, HttpStatus.OK);
+		} catch (NoResultException e) {
+			return new ResponseEntity<Boolean>(status, HttpStatus.NOT_IMPLEMENTED);
+		}
+	}
+	@PutMapping("/")
+	public ResponseEntity<?> updateCustomer(@RequestBody SELLERS seller) {
+		Boolean status = false;
+		try {
+			status = dao.update(seller);
 			return new ResponseEntity<Boolean>(status, HttpStatus.OK);
 		} catch (NoResultException e) {
 			return new ResponseEntity<Boolean>(status, HttpStatus.NOT_IMPLEMENTED);

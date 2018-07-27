@@ -18,57 +18,53 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.restapi.dao.DaoInterface;
-import com.restapi.pojo.CLAIM;
-import com.restapi.pojo.CUSTOMERS;
+import com.restapi.pojo.CUSTOMERADDRESS;
 
 @RestController
-@RequestMapping("/customer")
-public class CustomerController {
-	@Autowired
-	@Qualifier("CustomerDao")
-	private DaoInterface<CUSTOMERS> dao;
+@RequestMapping("/customeraddress")
+public class CustomerAddressController {
 
+	@Autowired
+	@Qualifier("CustomerAddressDao")
+	private DaoInterface<CUSTOMERADDRESS> dao;
+
+	@GetMapping(value = "/customer/{id}")
+	public List<CUSTOMERADDRESS> getCustomerAddress(@PathVariable int id) {
+		List<CUSTOMERADDRESS> cust = null;
+		try {
+			cust = dao.getSome(id);
+		} catch (NoResultException e) {
+			System.out.println("err in get summary " + e);
+			return null;
+		}
+		return cust;
+	}
+	
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<?> getAdmin(@PathVariable int id) {
-		CUSTOMERS cust = null;
+	public ResponseEntity<?> getAddress(@PathVariable int id) {
+		CUSTOMERADDRESS cust = null;
 		try {
 			cust = dao.get(id);
 		} catch (NoResultException e) {
 			System.out.println("err in get summary " + e);
 			return new ResponseEntity<String>("Invalid ", HttpStatus.NOT_FOUND);
 		}
-		return new ResponseEntity<CUSTOMERS>(cust, HttpStatus.OK);
+		return new ResponseEntity<CUSTOMERADDRESS>(cust, HttpStatus.OK);
 	}
 
 	@GetMapping(value = "/")
 	// @RequestMapping(....,method=RequestMethod.GET)
-	public List<CUSTOMERS> listAdmin() {
+	public List<CUSTOMERADDRESS> listAdmin() {
 		System.out.println("in list ADMINS");
-		List<CUSTOMERS> list = (List<CUSTOMERS>) dao.getall();
+		List<CUSTOMERADDRESS> list = (List<CUSTOMERADDRESS>) dao.getall();
 		System.out.println(list);
 		return list;
 	}
 	
 
-	@PostMapping("/login")
-	public ResponseEntity<?> ValidateCustomer(@RequestBody CLAIM a) {
-		CUSTOMERS cust = null;
-		try {
-			cust = dao.get(a.getEMAIL(), a.getPASSWORD());
-			if (cust.getEMAIL().equals(a.getEMAIL()) && cust.getPASSWORD().equals(cust.getPASSWORD())) {
-
-				CLAIM claim = new CLAIM(cust.getEMAIL(), cust.getCUSTID());
-				return new ResponseEntity<CLAIM>(claim, HttpStatus.OK);
-			} else {
-				return null;
-			}
-		} catch (NoResultException e) {
-			return null;
-		}
-	}
 
 	@PostMapping("/")
-	public ResponseEntity<?> insertCustomer(@RequestBody CUSTOMERS cust) {
+	public ResponseEntity<?> insertCustomer(@RequestBody CUSTOMERADDRESS cust) {
 		Boolean status = false;
 		try {
 			status = dao.insert(cust);
@@ -78,7 +74,7 @@ public class CustomerController {
 		}
 	}
 	@PutMapping("/")
-	public ResponseEntity<?> updateCustomer(@RequestBody CUSTOMERS cust) {
+	public ResponseEntity<?> updateCustomer(@RequestBody CUSTOMERADDRESS cust) {
 		Boolean status = false;
 		try {
 			status = dao.update(cust);
