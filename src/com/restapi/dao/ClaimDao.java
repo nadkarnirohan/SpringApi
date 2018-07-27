@@ -42,4 +42,10 @@ public class ClaimDao implements DaoInterface<CLAIM> {
 		return null;
 	}
 
+	@Override
+	public List<CLAIM> getSome(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

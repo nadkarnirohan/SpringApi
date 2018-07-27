@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.restapi.pojo.INVENTORY;
 import com.restapi.pojo.ORDERDETAILS;
 
 @Repository("OrderDetailsDao")
@@ -25,7 +26,7 @@ public class OrderDetailsDao implements DaoInterface<ORDERDETAILS> {
 				.setParameter("id", id).getSingleResult();
 	}
 
-	public List<ORDERDETAILS> getOrderDetails(int id) {
+	public List<ORDERDETAILS> getSome(int id) {
 
 		System.out.println("ordrdetdao : get summary " + id);
 		return sf.getCurrentSession()
@@ -66,5 +67,7 @@ public class OrderDetailsDao implements DaoInterface<ORDERDETAILS> {
 		return null;
 		
 	}
+	
+
 
 }

@@ -6,9 +6,8 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import com.restapi.pojo.SELLERSADDRESS;
 
-import com.restapi.pojo.SELLERSADDRESS;
-import com.restapi.pojo.SELLERSADDRESS;
 
 @Repository("SellerAddressDao")
 @Transactional
@@ -57,6 +56,13 @@ public class SellerAddressDao implements DaoInterface<SELLERSADDRESS> {
 	public SELLERSADDRESS get(String name, String password) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public List<SELLERSADDRESS> getSome(int id) {
+		System.out.println("custdao : get summary " + id);
+		return sf.getCurrentSession().createQuery("select a from SELLERSADDRESS a where a.SELLERID = :id", SELLERSADDRESS.class)
+				.setParameter("id", id).getResultList();
 	}
 
 }

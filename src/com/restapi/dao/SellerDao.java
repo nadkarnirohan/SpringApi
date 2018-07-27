@@ -56,5 +56,10 @@ public class SellerDao implements DaoInterface<SELLERS> {
 				.createQuery("select seller from SELLERS seller where seller.EMAIL = :email and seller.PASSWORD = :password", SELLERS.class)
 				.setParameter("email",email).setParameter("password", password).getSingleResult();
 	}
+	@Override
+	public List<SELLERS> getSome(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

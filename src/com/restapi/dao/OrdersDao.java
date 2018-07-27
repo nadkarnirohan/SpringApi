@@ -24,7 +24,7 @@ public class OrdersDao implements DaoInterface<ORDERS> {
 				.setParameter("id",id).getSingleResult();
 	}
 
-	public List<ORDERS>  getOrders(int id) {
+	public List<ORDERS>  getSome(int id) {
 		
 		System.out.println("orderdao : get summary " + id );
 		return sf.getCurrentSession()

@@ -62,4 +62,10 @@ public class CustomerDao implements DaoInterface<CUSTOMERS> {
 				.setParameter("email",email).setParameter("password", password).getSingleResult();
 	}
 
+	@Override
+	public List<CUSTOMERS> getSome(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

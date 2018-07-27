@@ -26,7 +26,7 @@ public class PurchaseDetailsDao implements DaoInterface<PURCHASEDETAILS> {
 				.setParameter("id", id).getSingleResult();
 	}
 
-	public List<PURCHASEDETAILS> getPurchaseDetails(int id) {
+	public List<PURCHASEDETAILS> getSome(int id) {
 
 		System.out.println("purdetdao : get summary " + id);
 		return sf.getCurrentSession()

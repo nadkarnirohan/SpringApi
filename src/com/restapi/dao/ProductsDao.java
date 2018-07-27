@@ -57,4 +57,10 @@ public class ProductsDao implements DaoInterface<PRODUCTS> {
 	public PRODUCTS get(String email, String password) {
 		return null;
 	}
+
+	@Override
+	public List<PRODUCTS> getSome(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

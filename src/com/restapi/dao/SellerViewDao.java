@@ -42,4 +42,10 @@ public class SellerViewDao implements DaoInterface<SELLERS_VIEW> {
 		return null;
 	}
 
+	@Override
+	public List<SELLERS_VIEW> getSome(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

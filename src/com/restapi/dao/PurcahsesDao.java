@@ -24,7 +24,7 @@ public class PurcahsesDao implements DaoInterface<PURCHASES> {
 				.setParameter("id", id).getSingleResult();
 	}
 	
-	public List<PURCHASES> getPurchases(int id) {
+	public List<PURCHASES> getSome(int id) {
 
 		System.out.println("purchasedao : get summary " + id);
 		return sf.getCurrentSession().createQuery("select a from PURCHASES a where a.SELLERID = :id", PURCHASES.class)

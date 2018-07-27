@@ -28,12 +28,9 @@ public class AdminDao implements DaoInterface<ADMIN> {
 
 	@Override
 	public boolean insert(ADMIN adm) {
-	Integer stat = (Integer)sf.getCurrentSession().save(adm);
-		//sf.getCurrentSession().get(adm);
-	if(stat > 0) {
+	sf.getCurrentSession().persist(adm);
+		//sf.getCurrentSession().get(adm)
 		return true;
-	}
-		return false;
 	}
 
 	@Override
@@ -62,6 +59,12 @@ public ADMIN get(String name , String password) {
 	public boolean update(ADMIN adm) {
 		sf.getCurrentSession().update(adm);
 		return true;
+	}
+
+	@Override
+	public List<ADMIN> getSome(int id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

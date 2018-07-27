@@ -55,7 +55,7 @@ public class CustomerAddressController {
 	@GetMapping(value = "/")
 	// @RequestMapping(....,method=RequestMethod.GET)
 	public List<CUSTOMERADDRESS> listAdmin() {
-		System.out.println("in list ADMINS");
+		System.out.println("in list CUSTOMERADDRESS");
 		List<CUSTOMERADDRESS> list = (List<CUSTOMERADDRESS>) dao.getall();
 		System.out.println(list);
 		return list;
